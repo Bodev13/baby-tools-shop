@@ -111,8 +111,6 @@ The Docker container is configured to expose port 8025. If you wish to use a dif
 1. Rebuild the Docker image after making changes to the application code or dependencies.
 
 
-
-
 ### DA Hints
 
 This section will cover some hot tips when trying to interacting with this repository:
