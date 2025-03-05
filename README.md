@@ -35,28 +35,28 @@ The project includes the following:
    git clone <repository_url>
    cd <repository_directory>
 ```
-1. Create a dockerfile 
+3. Create a dockerfile 
 
 ```bash
 touch Dockerfile
 ```
 
-1. Create a requirements.txt
+4. Create a requirements.txt
 
 ```bash
 touch requirements.txt
 ```
-1. Buid the Docker image
+5. Buid the Docker image
 
 ```bash
 docker build -t demo-app .
 ```
-1. Run the Docker container
+6. Run the Docker container
 
 ```bash
 docker run -it --rm -p 8025:8025 demo-app
 ```
-1. Visit the application in the browser
+7. Visit the application in the browser
 
 ```bash
 http://localhost:8025/
