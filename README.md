@@ -12,9 +12,9 @@
 1. [Repository Description](#repository-description)
 2. [Quickstart](#quickstart)
 4. [Usage](#usage)
-5. [Dockerfile Configuration and setup](dockerfile-configuration-and-setup)
-6. [Port Configuration](port-configuration)
-7. [Modifying the Application](modifying-the-application)
+5. [Dockerfile Configuration and setup](#dockerfile-configuration-and-setup)
+6. [Port Configuration](#port-configuration)
+7. [Modifying the Application](#modifying-the-application)
    
 
 ## Repository Description
@@ -118,6 +118,9 @@ The Docker container is configured to expose port 8025. If you wish to use a dif
 
 1. To modify the application or add additional dependencies, update the requirements.txt file.
 1. Rebuild the Docker image after making changes to the application code or dependencies.
+1. Check the checklist
+[Checklist](#babyshop_checklist.pdf)
+
 
 
 ### DA Hints
