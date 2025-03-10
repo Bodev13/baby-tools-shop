@@ -35,31 +35,38 @@ The project includes the following:
    git clone <repository_url>
    cd <repository_directory>
 ```
-3. Create a dockerfile 
+
+3. Add your IP under ALLOWED_HOSTS in the settings.py
+
+```bash
+nano settings.py
+```
+
+4. Create a dockerfile 
 
 ```bash
 touch Dockerfile
 ```
 
-4. Create a requirements.txt
+5. Create a requirements.txt
 
 ```bash
 touch requirements.txt
 ```
-5. Buid the Docker image
+6. Buid the Docker image
 
 ```bash
 docker build -t demo-app .
 ```
-6. Run the Docker container
+7. Run the Docker container
 
 ```bash
-docker run -it --rm -p 8025:8025 demo-app
+docker run -it --rm -p 8025:8025 babyshop_app
 ```
-7. Visit the application in the browser
+8. Visit the application in the browser
 
 ```bash
-http://localhost:8025/
+http://<your-server-ip>:8025/
 ```
 
 # This will get the Baby Tools Shop running in a Docker container on your local machine.
@@ -84,20 +91,22 @@ FROM python:3.10-alpine
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy requirements file and install dependencies
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt  
+
+RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy all project files to the container
 COPY . /app/
 
-# Set working directory to Django application
-WORKDIR /app/your_app_directory
+# Install dependencies
+WORKDIR /app/babyshop_app
 
-# Expose port
+# Apply migrations
+RUN python manage.py makemigrations
+RUN python manage.py migrate
+
 EXPOSE 8025
 
-# Command to run the application
 ENTRYPOINT ["python", "manage.py", "runserver", "0.0.0.0:8025"]
 ```
 
