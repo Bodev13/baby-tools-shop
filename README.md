@@ -12,7 +12,7 @@
 3. [Usage](#usage)
 4. [Modifying the Application](#modifying-the-application)
 5. [Checklist](babyshop_checklist.pdf)
-6. [Dockerfile](dockerfile)
+6. [Dockerfile](Dockerfile)
    
 
 ## Repository Description
