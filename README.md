@@ -1,36 +1,36 @@
 # Baby Tools Shop - Dockerized Setup
+This repository contains the setup for the Baby Tools Shop application, containerized using Docker. The purpose of this repository is to provide an easy and reproducible environment for running the Baby Tools Shop Django application inside a Docker container.
 
-### TECHNOLOGIES
+### Prerequisites
 
 - Python 3.10.10
 - Django 5.1.6
 - Venv
 
 ## Table of Contents
-1. [Repository Description](#repository-description)
-2. [Quickstart](#quickstart)
-3. [Usage](#usage)
-4. [Modifying the Application](#modifying-the-application)
-5. [Checklist](babyshop_checklist.pdf)
-6. [Dockerfile](Dockerfile)
+1. [Quickstart](#quickstart)
+2. [Usage](#usage)
+3. [Modifying the Application](#modifying-the-application)
+4. [Checklist](babyshop_checklist.pdf)
+5. [Dockerfile](Dockerfile)
    
-
-## Repository Description
-
-This repository contains the setup for the Baby Tools Shop application, containerized using Docker. The purpose of this repository is to provide an easy and reproducible environment for running the Baby Tools Shop Django application inside a Docker container.
-
 
 ## Quickstart
 
 1. Install the Docker Desktop for Mac users here:
+
 https://docs.docker.com/desktop/setup/install/mac-install/
+
+and for Windows users here:
+
+https://docs.docker.com/desktop/setup/install/windows-install/
 
 
 1. Clone the repository:
 
 ```bash
-   git clone https://github.com/Bodev13/baby-tools-shop
-   cd baby-tools-shop
+git clone https://github.com/Bodev13/baby-tools-shop
+cd baby-tools-shop
 ```
 
 3. Add your IP under ALLOWED_HOSTS in the settings.py
@@ -59,6 +59,30 @@ http://<your-server-ip>:8025/
 ## Usage
 
 This will get the Baby Tools Shop running in a Docker container on your local machine and on the VM.
+
+To create a superuser follow the steps below:
+
+1. Find active containers
+
+```bash
+docker ps
+```
+2. Open an interactive terminal inside a running container
+
+```bash
+docker exec -it <container_name_or_id> /bin/sh
+```
+3. Create a Django superuser
+
+```bash
+python manage.py createsuperuser
+```
+and fill out all necessary fields, e.g., superuser_name and password
+
+4. Login to the baby tools shop at http://<your-server-ip>:8025/admin
+
+5. Create products inside the baby tools shop
+
 
 
 ## Modifying the Application
