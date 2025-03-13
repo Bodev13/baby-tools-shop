@@ -4,8 +4,6 @@ This repository contains the setup for the Baby Tools Shop application, containe
 ### Prerequisites
 
 - Python 3.10.10
-- Django 5.1.6
-- Venv
 
 ## Table of Contents
 1. [Quickstart](#quickstart)
